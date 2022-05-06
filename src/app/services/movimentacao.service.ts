@@ -16,4 +16,9 @@ export class MovimentacaoService {
   create(movimentacao: any): Observable<any> {
     return this.http.post(`${baseUrl}/movimentacoes`, movimentacao);
   }
+  
+// adicionando o serviço para listar as movimentacoes por correntista
+  findByIdConta(idConta:any): Observable<any> {
+    return this.http.get(`${baseUrl}/movimentacoes/${idConta}`);
+  }
 }
